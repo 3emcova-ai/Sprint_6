@@ -1,4 +1,4 @@
-from base_page import BasePage
+from .base_page import BasePage
 from locators.main_page_locators import MainPageLocators
 
 
@@ -8,5 +8,11 @@ class MainPage(BasePage):
 
     def scroll_to_questions(self):
         self.scroll_to_element(MainPageLocators.QUESTIONS_SECTION)
+
+    def click_to_question(self, locator):
+        self.click_element_with_wait(locator)
+
+    def get_text_answer(self, locator):
+        return self.find_element_with_wait(locator).text
 
     
