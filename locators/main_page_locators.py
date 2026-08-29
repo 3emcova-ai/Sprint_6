@@ -25,3 +25,6 @@ class MainPageLocators:
     #кнопки заказа самоката
     ORDER_BUTTON_HEADER = (By.XPATH, ".//div[contains(@class, 'Header_Nav')]//button[text()='Заказать']")
     ORDER_BUTTON_FOOTER = (By.XPATH, ".//div[contains(@class, 'Home_FinishButton')]//button[text()='Заказать']")
+    #логотипы
+    LOGO_YANDEX = (By.XPATH, ".//a[contains(@class, 'Header_LogoYandex')]")
+    LOGO_SCOOTER = (By.XPATH, ".//a[contains(@class, 'Header_LogoScooter')]")

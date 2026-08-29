@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from pages.main_page import MainPage
@@ -9,15 +10,15 @@ from locators.main_page_locators import MainPageLocators
 
 class TestOrderScooter:
 
+    @allure.title('Проверка заказа самоката')
+    @allure.description('Проверка наличия всплывающего окна с сообщением об успешном создании заказа (проверяютя 2 кнопки заказа: вверху и внизу страницы).')
     @pytest.mark.parametrize('order_button', [MainPageLocators.ORDER_BUTTON_HEADER, MainPageLocators.ORDER_BUTTON_FOOTER])
-
     def test_order_buttons(self, driver, order_button):
         main_page = MainPage(driver)
         order_page = OrderPage(driver)
         about_rent_page = AboutRentPage(driver)
 
         main_page.close_cookies()
-        #main_page.click_to_order_button_header()
         main_page.click_element_with_wait(order_button)
         order_page.send_keys_to_field_name()
         order_page.send_keys_to_field_surname()
