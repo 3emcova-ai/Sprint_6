@@ -224,3 +224,4 @@ __marimo__/
 #allure-report/
 
 __init__.py
+.vscode/
