@@ -1,6 +1,5 @@
 import pytest
 
-from data import DataOrder
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
 from pages.about_rent_page import AboutRentPage
