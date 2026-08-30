@@ -33,3 +33,7 @@ class BasePage:
     def wait_for_element_visible(self, locator):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)
+
+    @allure.step('Возвращаю url текущей страницы')
+    def get_current_url(self):
+        return self.driver.current_url

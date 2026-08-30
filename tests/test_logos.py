@@ -1,6 +1,7 @@
 import allure
 
 from pages.main_page import MainPage
+from data import Urls
 
 
 class TestLogos:
@@ -10,7 +11,7 @@ class TestLogos:
     def test_logo_yandex(self, driver):
         main_page = MainPage(driver)
         main_page.click_logo_yandex()
-        assert 'dzen.ru' in driver.current_url
+        assert 'dzen.ru' in main_page.get_current_url()
 
     @allure.title('Проверка логотипа Самокат')
     @allure.description('Клик на логотип Самоката открывает главную страницу Самоката')
@@ -18,5 +19,5 @@ class TestLogos:
         main_page = MainPage(driver)
         main_page.click_order_button_header()
         main_page.click_logo_scooter()
-        assert driver.current_url == 'https://qa-scooter.praktikum-services.ru/'
+        assert main_page.get_current_url() == Urls.SCOOTER_URL
         
