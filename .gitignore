@@ -222,3 +222,6 @@ __marimo__/
 # Allure отчеты (НЕ храним!)
 #allure_results/
 #allure-report/
+
+__init__.py
+.vscode/
